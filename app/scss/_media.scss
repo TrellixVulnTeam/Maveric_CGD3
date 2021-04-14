@@ -1,0 +1,110 @@
+@media (max-width: 1366px) {
+    body{
+        font-size: 16px;
+        line-height: 22px;
+    }
+    .top__title{
+        font-size: 75px;
+        line-height: 90px;
+        margin-bottom: 20px;
+    }
+    .top__inner img{
+        width: 80%;
+    }
+    .top__text{
+        margin: 15px 0 25px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .menu{
+        order: 1;
+    }
+    .menu__list{
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: rgba(#1C1C1C, .9);
+        z-index: -1;
+        display: flex;
+        padding-top: 90px;
+        flex-direction: column;
+        justify-content: space-around;
+        transform: translateY(-100%);
+        transition: all 0.5s;
+        &--active{
+            transform: translateY(0);
+        }
+    }
+    .menu__list-item+.menu__list-item{
+        padding-left: 0;
+    }
+    .menu__list-link,
+    .menu__list-phone{
+        display: block;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 17px;
+        color: #fff;
+    }
+    .menu-btn{
+        display: block;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        padding: 0;
+        cursor: pointer;
+    }
+    .menu-btn::before,
+    .menu-btn::after{
+        content: "";
+        width: 24px;
+        height: 2px;
+        background-color: #E0E0E0;
+        display: block;
+        margin-bottom: 4px;
+        transition: all 0.5s;
+    }
+    .menu-btn::after{
+        margin-bottom: 0;
+        width: 24px;
+        margin-left: auto;
+    }
+    .menu-btn-line{
+        background-color: #E0E0E0;
+        display: block;
+        width: 24px;
+        height: 2px;
+        margin-bottom: 4px;
+        transition: opacity 0.9s;
+    }
+    .menu-btn.menu-btn--active{
+        .menu-btn-line{
+            transition: opacity 0.1s;
+            opacity: 0;
+        }
+        &::after{
+            transform: translateY(-6px) rotate(-135deg);
+        }
+        &::before{
+            transform: translateY(6px) rotate(135deg);
+        }
+    }
+    .header__phone{
+        display: none;
+    }
+}
+
+@media (max-width: 540px) {
+    .top__title{
+        display: none;
+    }
+    .top__text{
+        margin: 15px 0 30%;
+    }
+    .scroll-btn{
+        padding: 13px 0;
+    }
+}
