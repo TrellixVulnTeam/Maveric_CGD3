@@ -14,6 +14,12 @@
     .top__text{
         margin: 15px 0 25px;
     }
+    .title{
+        padding-top: 90px;
+    }
+    .products__slider-box{
+        padding-top: 0;
+    }
 }
 
 @media (max-width: 1100px) {
@@ -30,9 +36,11 @@
         z-index: -1;
         display: flex;
         padding-top: 90px;
+        padding-left: 24px;
         flex-direction: column;
         justify-content: space-around;
-        transform: translateY(-100%);
+        transform: translateY(-1000%);
+        overflow: auto;
         transition: all 0.5s;
         &--active{
             transform: translateY(0);
@@ -41,13 +49,29 @@
     .menu__list-item+.menu__list-item{
         padding-left: 0;
     }
+    .menu__list-item{
+        margin-bottom: 35px;
+        &::first-child{
+            margin-top: auto;
+        }
+    }
     .menu__list-link,
     .menu__list-phone{
         display: block;
-        font-weight: 500;
-        font-size: 15px;
-        line-height: 17px;
-        color: #fff;
+    }   
+    .menu__list-phone{
+        padding-top: 33px;
+        position: relative;
+        margin-bottom: auto;
+        margin-top: auto;
+        &::before{
+            content: "";
+            position: absolute;
+            border-top: 1px solid rgba(#fff, .24);
+            top: 0;
+            left: -24px;
+            right: 0;
+        }
     }
     .menu-btn{
         display: block;
@@ -95,6 +119,12 @@
     .header__phone{
         display: none;
     }
+    .products__text{
+        padding-right: 15px;
+    }
+    .products__slider-box{
+        padding-right: 20px;
+    }
 }
 
 @media (max-width: 540px) {
@@ -106,5 +136,16 @@
     }
     .scroll-btn{
         padding: 13px 0;
+    }
+}
+
+@media (max-height: 375px){
+    .menu__list-phone{
+        padding: 15px 0;
+    }
+}
+@media (max-height: 340px){
+    .menu__list-item{
+        margin-bottom: 18px;
     }
 }
